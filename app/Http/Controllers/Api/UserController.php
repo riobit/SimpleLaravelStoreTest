@@ -17,8 +17,8 @@ class UserController extends Controller
     public function index()
     {
         //
-        $item = DB::table('users')->get();
-        return  $item ;
+        $result = User::get();
+        return $result;
     }
 
     /**
@@ -30,6 +30,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $user = new User();
+        $user->name = $request->name;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->email = 'placeholderemail@email.com';
+        $user->password = 'placeholderpassword';
+        $user->save();
+
+        return $user;
     }
 
     /**
@@ -41,6 +50,10 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
+        // $result = DB::table('users')->where('id', $user->id)->get();
+        $result = User::Where('id', $user->id)->first();
+        return $result;
+        
     }
 
     /**
@@ -53,6 +66,13 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+        $result = User::Where('id', $user->id)->first();
+        $result->name = $request->name;
+        $result->address = $request->address;
+        $result->phone = $request->phone;
+        $result->save();
+
+        return $result;
     }
 
     /**
@@ -64,5 +84,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+        $result = User::Where('id', $user->id)->delete();
+        return $result;
     }
 }

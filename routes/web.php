@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::resource('item', ItemController::class);
+// Route::resource('user', UserController::class);
+// Route::resource('order', OrderController::class);
+// Route::resource('orderdetails', OrderDetailsController::class);
 
 
 

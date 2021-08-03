@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Item;
-use App\Http\Resources\ItemResourceCollection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,8 +17,8 @@ class ItemController extends Controller
     public function index()
     {
         //
-        $item = DB::table('item')->get();
-        return  $item ;
+        $result = Item::get();
+        return $result;
     }
 
     /**
@@ -31,19 +30,28 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         //
+        $item = new Item;
+        $item->name = $request->name;
+        $item->code = $request->code;
+        $item->price = $request->price;
+        $item->save();
+
+        return $item;
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Item  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Item $item)
     {
         //
-       
-        
+        // $result = DB::table('items')->where('id', $item->id)->get();
+        $result = Item::Where('id', $item->id)->first();
+        return $result;
     }
 
     /**
@@ -56,6 +64,13 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         //
+        $result = Item::Where('id', $item->id)->first();
+        $result->name = $request->name;
+        $result->code = $request->code;
+        $result->price = $request->price;
+        $result->save();
+
+        return $result;
     }
 
     /**
@@ -67,5 +82,7 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         //
+        $result = Item::Where('id', $item->id)->delete();
+        return $result;
     }
 }

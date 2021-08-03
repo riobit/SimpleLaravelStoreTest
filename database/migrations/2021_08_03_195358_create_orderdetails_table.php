@@ -20,8 +20,8 @@ class CreateOrderdetailsTable extends Migration
             $table->timestamps();
         });
         Schema::table('orderDetails', function (Blueprint $table) {
-            $table->foreign('itemId')->references('id')->on('item');    
-            $table->foreign('orderId')->references('id')->on('order');    
+            $table->foreign('itemId')->references('id')->on('items');    
+            $table->foreign('orderId')->references('id')->on('orders');    
         });
     }
 
