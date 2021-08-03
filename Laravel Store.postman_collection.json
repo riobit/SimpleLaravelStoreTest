@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "2e9ee920-b54e-40d1-831e-2c7f47e81fd1",
+		"name": "Laravel Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/item",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/item/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"item",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"asdf\",\r\n    \"code\": \"code123\",\r\n    \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/item",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"namabener\",\r\n    \"code\": \"code123\",\r\n    \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/item/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"item",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/item/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"item",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"asdf\",\r\n    \"address\": \"alamat1\",\r\n    \"phone\": 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"asdf\",\r\n    \"address\": \"alamat1\",\r\n    \"phone\": 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/item/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"item",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : 1,\r\n    \"items\" : [1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrderByIdForRecipt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
